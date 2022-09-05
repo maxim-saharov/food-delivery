@@ -1,10 +1,10 @@
 
-### ⛳️ Deployment
+### ⛳️ Food delivery
 
 ***
 [//]: <> (This is a comment, it will not be included)
 
-#### Link to where publishes this project: [https://maxim-saharov.com.ua/Pulse](https://maxim-saharov.com.ua/Pulse)
+#### Link to where publishes this project: [https://maxim-saharov.com.ua/FoodDelivery](https://maxim-saharov.com.ua/FoodDelivery)
 
 Link to where publish other projects: [https://maxim-saharov.com.ua](https://maxim-saharov.com.ua)
 
@@ -21,22 +21,21 @@ https://gist.github.com/rxaviers/7360908
 https://dillinger.io/
 )
 
-If you want deployment at your PC:
+#### ⛳️ Deployment
 
 * clone project
 * yarn install (or npm install)
 * in new terminal *json-server --watch db.json --port 3000*
-
-http://localhost:3000/requests
-
-* webpack
+```bash
+webpack
+```
 * open in browser index.html
 
 > И вы можете видеть заявки на обратный звонок по этой ссылке [http://localhost:3000/requests](http://localhost:3000/requests )
 
 ***
 
-##### Tech stack:
+#### Tech stack:
 
 * Figma
 * HTML, CSS, BEM, SCSS

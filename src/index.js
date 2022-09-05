@@ -1,12 +1,13 @@
-//
-import tabs from './modules/tabs'
-import modal from './modules/modal'
-import timer from './modules/timer'
-import cards from './modules/cards'
-import calc from './modules/calc'
-import forms from './modules/forms'
-import slider from './modules/slider'
-import {openModal} from './modules/modal'
+//  2
+import './css/style.css'
+import tabs from './js/modules/tabs'
+import modal from './js/modules/modal'
+import timer from './js/modules/timer'
+import cards from './js/modules/cards'
+import calc from './js/modules/calc'
+import forms from './js/modules/forms'
+import slider from './js/modules/slider'
+import {openModal} from './js/modules/modal'
 
 window.addEventListener( 'DOMContentLoaded', function () {
    const modalTimerId = setTimeout( () => openModal( '.modal', modalTimerId ), 50000 )

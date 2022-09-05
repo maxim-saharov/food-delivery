@@ -12,7 +12,8 @@ a {
 }
 
 .btn {
-   width: 220px;
+   /*width: 220px;*/
+   width: 200px;
    height: 65px;
    display: flex;
    justify-content: center;
@@ -380,6 +381,7 @@ a {
    width: 16px;
    height: 16px;
    background: url(../icons/switch.svg) center center/cover no-repeat
+   /*background: url('icons/switch.svg') center center/cover no-repeat*/
 }
 
 .calculating__choose {

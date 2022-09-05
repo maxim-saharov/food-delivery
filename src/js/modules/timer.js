@@ -52,6 +52,4 @@ function timer(id, deadline) {
    setClock( id, deadline )
 }
 
-debugger
-
 export default timer
