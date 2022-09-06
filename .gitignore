@@ -24,8 +24,10 @@ yarn-debug.log*
 yarn-error.log*
 
 # other
+package-lock.json
+yarn.lock
 /.idea/
 /.vscode/
 /src/saharovData.ts
-#git rm --cached saharovData.ts
+#git rm --cached yarn.lock
 #git commit -m "Remove smart.php only from git"

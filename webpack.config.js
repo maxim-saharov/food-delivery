@@ -1,83 +1,148 @@
-'use strict'
+//
+const path = require( 'path' )
+const HtmlWebpackPlugin = require( 'html-webpack-plugin' )
+const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' )
 
-let path = require( 'path' )
-// Модуль Node.js path является встроенным и предоставляет набор функций для работы с путями в файловой системе.
-const {CleanWebpackPlugin} = require( 'clean-webpack-plugin' )
-// очищает неиспользуемые жс бандлы и другие наверно
-const HTMLWebpackPlugin = require( 'html-webpack-plugin' )
-// переносим хтмл в папку сборки и импортирует в него все что нужно
+// по умолчанию  mode: 'production',
+// но мы тут явно указываем при запуске что нам нужно в переменную
+// NODE_ENV и тут ее считываем и устанавливаем нужный нам режим
+// в переменную что угодно можно написать а тут просто считать
+let mode = process.env.NODE_ENV || 'development'
 
-const CopyPlugin = require( 'copy-webpack-plugin' )
+//console.log( process.env.NODE_ENV )
+//console.log( mode )
 
+const devMode = mode === 'development'
+const target = devMode ? 'web' : 'browserslist'
+const devtool = devMode ? 'source-map' : undefined
 
 module.exports = {
-   //mode: 'production',
-   mode: 'development',
-   //entry: './js/script.js',
-   entry: './src/index.js',
-   output: {
-      //
-      //path: __dirname + '/js'
-      // __dirname - типо путь проекта
-      path: path.resolve( __dirname, 'dist' ),
-      filename: '[name].[hash].js'
-   },
 
-   resolve: {
-      alias: {
-         images: path.resolve( __dirname, 'src/assets/img/' )
-      }
-   },
-   //watch: true,
+   mode,
 
-   devtool: 'source-map',
+   target,
+
+   devtool,
 
    devServer: {
-      port: 3000
-      //historyApiFallback: true
+      port: 3010,
+      open: true,
+      hot: true
    },
+
+   entry: ['@babel/polyfill', path.resolve( __dirname, 'src', 'main.js' )],
+
+   output: {
+      path: path.resolve( __dirname, 'dist' ),
+      clean: true,
+      filename: '[name].[contenthash].js',
+      assetModuleFilename: 'assets/[name][ext]'
+   },
+
+   plugins: [
+
+      new HtmlWebpackPlugin( {
+         template: path.resolve( __dirname, 'src', 'main.html' )
+      } ),
+
+      new MiniCssExtractPlugin( {
+         filename: '[name].[contenthash].css'
+      } )
+
+   ],
 
    module: {
       rules: [
+
+         //html-loader
          {
-            test: /\.(css|less)$/i,
-            use: ['style-loader', 'css-loader', 'less-loader']
+            test: /\.html$/i,
+            loader: 'html-loader'
          },
+
+         // работа со стилями
          {
-            test: /\.(jpg|jpeg|png|svg)/,
-            use: ['file-loader'],
+            test: /\.(c|sa|sc)ss$/i,
+            use: [
+               devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+               'css-loader',
+               {
+                  loader: 'postcss-loader',
+                  options: {
+                     postcssOptions: {
+                        plugins: [require( 'postcss-preset-env' )]
+                     }
+                  }
+               },
+               'sass-loader'
+            ]
          },
+
+         // работа со шрифтами
          {
-            //test: /\.m?js$/,
-            test: /\.js$/,
+            test: /\.woff2?$/i,
+            type: 'asset/resource',
+            generator: {
+               filename: 'fonts/[name][ext]'
+            }
+         },
+
+         // тут работа с фото
+         {
+            test: /\.(jpe?g|png|webp|gif)$/i,
+            // jpe?g - вопросительный знак означает что буква перед
+            // ним может быть а может и не быть те есть 'e?'
+            // дописка 'i' - означает если большими буквами будет написано
+            // - типо JPG - то тоже будет ок.
+            use: [
+               {
+                  loader: 'image-webpack-loader',
+                  options: {
+                     mozjpeg: {
+                        progressive: true
+                     },
+                     optipng: {
+                        enabled: false
+                     },
+                     pngquant: {
+                        quality: [0.65, 0.90],
+                        speed: 4
+                     },
+                     gifsicle: {
+                        interlaced: false
+                     },
+                     webp: {
+                        quality: 75
+                     }
+                  }
+               }
+            ],
+            type: 'asset/resource',
+            generator: {
+               filename: 'img/[name][ext]'
+            }
+         },
+
+         // тут работа с фото и без ужатия
+         {
+            test: /\.(ico|svg)$/i,
+            type: 'asset/resource',
+            generator: {
+               filename: 'icons/[name][ext]'
+            }
+         },
+
+         //babel-loader
+         {
+            test: /\.m?js$/i,
             exclude: /(node_modules|bower_components)/,
             use: {
                loader: 'babel-loader',
                options: {
-                  presets: [['@babel/preset-env', {
-                     debug: true,
-                     corejs: 3,
-                     useBuiltIns: 'usage'
-                  }]]
+                  presets: ['@babel/preset-env']
                }
             }
          }
       ]
-   },
-
-   plugins: [
-      new HTMLWebpackPlugin( {template: './src/index.html'} ),
-      new CleanWebpackPlugin(),
-      // new CopyPlugin( {
-      //    patterns: [
-      //       //{from: './src/img', to: 'dist'}
-      //       {
-      //          from: "**/*",
-      //          to: "dist",
-      //       }
-      //       // {from: 'other', to: 'public'}
-      //    ]
-      // } )
-
-   ]
+   }
 }

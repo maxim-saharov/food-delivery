@@ -224,7 +224,6 @@ a {
 }
 
 .tabheader__item {
-   font-weight: 700;
    font-size: 18px;
    font-weight: 300;
    margin-top: 10px;
@@ -380,8 +379,8 @@ a {
    display: block;
    width: 16px;
    height: 16px;
-   background: url(../icons/switch.svg) center center/cover no-repeat
    /*background: url('icons/switch.svg') center center/cover no-repeat*/
+   background: url('icons/switch.svg') center center/cover no-repeat
 }
 
 .calculating__choose {

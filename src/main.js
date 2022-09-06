@@ -1,5 +1,7 @@
-//  2
-import './css/style.css'
+//
+import './main.html'
+import './main.scss'
+
 import tabs from './js/modules/tabs'
 import modal from './js/modules/modal'
 import timer from './js/modules/timer'
