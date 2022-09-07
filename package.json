@@ -1,7 +1,8 @@
 {
   "name": "food-delivery",
+  "homepage": "https://maxim-saharov.com.ua/FilmFinder",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
   "main": "main.js",
   "scripts": {
     "start": "set NODE_ENV=development&&webpack serve",
