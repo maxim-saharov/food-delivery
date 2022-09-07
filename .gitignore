@@ -24,8 +24,6 @@ yarn-debug.log*
 yarn-error.log*
 
 # other
-package-lock.json
-yarn.lock
 /.idea/
 /.vscode/
 /src/saharovData.ts

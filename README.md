@@ -1,5 +1,5 @@
 
-### Food delivery
+## Food delivery
 
 ***
 [//]: <> (This is a comment, it will not be included)
@@ -19,7 +19,7 @@ https://gist.github.com/rxaviers/7360908
 https://dillinger.io/
 )
 
-#### ⛳️ Deployment
+### ⛳️ Deployment
 
 * clone project
 ```shell
@@ -34,16 +34,17 @@ npm install -g json-server
 ```shell
 npm run start
 ```
+> You can see project on [http://localhost:3010](http://localhost:3010)  
+> Callback orders on [http://localhost:3000/requests](http://localhost:3000/requests )
+
 * if you want production mode
 ```shell
 npm run build-prod
 ```
 
-> And you can see callback orders at this link [http://localhost:3000/requests](http://localhost:3000/requests )
-
 ***
 
-#### Tech stack:
+### Tech stack:
 
 * HTML, CSS,
 * Only desktop version
@@ -52,4 +53,4 @@ npm run build-prod
 * JSON Server
 * Git, GitHub
 
-#### If you like 👍 this project don't forget to turn on a star 💛 for it)
+### If you like 👍 this project don't forget to turn on a star 💛 for it)
