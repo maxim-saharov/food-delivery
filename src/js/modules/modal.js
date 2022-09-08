@@ -27,11 +27,15 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
       btn.addEventListener( 'click', () => openModal( modalSelector, modalTimerId ) )
    } )
 
+
    modal.addEventListener( 'click', (e) => {
+
       if (e.target === modal || e.target.getAttribute( 'data-close' ) == '') {
          closeModal( modalSelector )
       }
+
    } )
+
 
    document.addEventListener( 'keydown', (e) => {
       if (e.code === 'Escape' && modal.classList.contains( 'show' )) {

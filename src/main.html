@@ -64,7 +64,7 @@
             </div>
          </div>
          <div class='tabcontent'>
-            <img src='img/tabs/vegy.jpg' alt='vegy'>
+            <img src='img/tabs/hamburger.jpg' alt='vegy'>
             <div class='tabcontent__descr'>
                Меню "Сбалансированное" - это соответствие вашего рациона всем научным рекомендациям. Мы тщательно
                просчитываем вашу потребность в к/б/ж/у и создаем лучшие блюда для вас.
@@ -213,7 +213,8 @@
       <div class='title'>Заказывай пробный день прямо сейчас!</div>
       <form action='#' class='order__form'>
          <input required placeholder='Ваше имя' name='name' type='text' class='order__input'>
-         <input required placeholder='Ваш номер телефона' name='phone' type='phone' class='order__input'>
+<!--         <input required placeholder='Ваш номер телефона' name='phone' type='phone' class='order__input'>-->
+         <input required placeholder='Ваш номер телефона' name='phone' type='tel' class='order__input'>
          <img src='icons/right.svg' alt='right'>
          <button class='btn btn_dark btn_min'>Перезвонить мне</button>
       </form>
@@ -270,10 +271,34 @@
       </div>
       <div class='call'>
          <div class='subtitle'>Или позвоните нам</div>
-         <a href='#' class='link'>+380675556677</a>
-         <a href='#' class='link'>+380505556677</a>
+         <a href='tel:+380675556677' class='link'>+380675556677</a>
+         <a href='tel:+380505556677' class='link'>+380505556677</a>
       </div>
    </div>
+
+   <div class='footer__сreated-by'>
+
+      Food delivery ©2022 Created by
+
+      <a
+         href='https://maxim-saharov.com.ua'
+         target='_blank' rel='noopener noreferrer'
+         class='pad-left-10px'
+      >
+         Maxim Saharov
+      </a>
+
+      <span class='pad-left-10px'>|</span>
+
+      <a
+         href='https://github.com/maxim-saharov/food-delivery'
+         target='_blank' rel='noopener noreferrer'
+         class='pad-left-10px'
+      >
+         GitHub
+      </a>
+   </div>
+
 </footer>
 
 <div class='modal'>
@@ -283,7 +308,7 @@
             <div class='modal__close' data-close>&times;</div>
             <div class='modal__title'>Мы свяжемся с вами как можно быстрее!</div>
             <input required placeholder='Ваше имя' name='name' type='text' class='modal__input'>
-            <input required placeholder='Ваш номер телефона' name='phone' type='phone' class='modal__input'>
+            <input required placeholder='Ваш номер телефона' name='phone' type='tel' class='modal__input'>
             <button class='btn btn_dark btn_min'>Перезвонить мне</button>
          </form>
       </div>

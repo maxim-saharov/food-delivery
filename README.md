@@ -1,16 +1,17 @@
 
 ## Food delivery
 
-***
 [//]: <> (This is a comment, it will not be included)
 
-#### Link to where publishes this project: [https://maxim-saharov.com.ua/FoodDelivery](https://maxim-saharov.com.ua/FoodDelivery)
+#### Link to where publishes this project: [https://maxim-saharov.com.ua/food-delivery](https://maxim-saharov.com.ua/food-delivery)
 
 Link to where publish other projects: [https://maxim-saharov.com.ua](https://maxim-saharov.com.ua)
 
 ***
 
 [//]: <> (
+переименовать на гит хабе сначало а потом в терминале такая команда
+git remote set-url origin https://github.com/maxim-saharov/food-delivery
 как что то добавить в маркдаун
 https://habr.com/ru/post/649363/
 тут просто что то пишем и потом копируем сердечки и т.д.
@@ -48,9 +49,9 @@ npm run build-prod
 
 * HTML, CSS,
 * Only desktop version
-* JavaScript, Tabs, Slider, Forms, Countdown timer, Calorie Calculator
+* Native JavaScript (Tabs, Slider, Forms, Countdown timer, Calorie Calculator)
 * Webpack 5, Compress image
-* JSON Server
+* JSON Server, LocalStorage
 * Git, GitHub
 
 ### If you like 👍 this project don't forget to turn on a star 💛 for it)

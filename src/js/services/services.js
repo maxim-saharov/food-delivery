@@ -1,25 +1,54 @@
 //
 const postData = async (url, data) => {
-   let res = await fetch( url, {
-      method: 'POST',
-      headers: {
-         'Content-Type': 'application/json'
-      },
-      body: data
-   } )
 
-   return await res.json()
-}
+   let dataFromForm = JSON.parse( data )
 
-async function getResource(url) {
-   let res = await fetch( url )
-
-   if (!res.ok) {
-      throw new Error( `Could not fetch ${url}, status: ${res.status}` )
+   let dataForJSpl = {
+      title: dataFromForm.name,
+      body: dataFromForm.phone
    }
 
-   return await res.json()
+   dataForJSpl = JSON.stringify( dataForJSpl )
+
+   let response = await fetch( url, {
+      method: 'POST',
+      headers: {
+         'Content-type': 'application/json; charset=UTF-8'
+      },
+      body: dataForJSpl
+   } )
+
+   if (!(response.status >= 200 && response.status < 300)) {
+      //throw new Error( response.status.toString() )
+      // это объект со всякими ненужными данными типо имя файла и т.д.
+      // но там есть стек вызовов и можно посмотреть кто скинул ошибку
+      // смотри ниже версию с объектом
+      throw response.status
+
+   }
+
+   return await response.json()
+   // если возврат засунут в иначе то оно все равно как то отрабатывает
+   // почему то выброс ошибки, хотя и не выбрасывает ее
+   // наверно авайт как то типо проверяет ошибку
+
 }
+
+
+async function getResource(url) {
+
+   //debugger
+
+   let response = await fetch( url )
+
+   if (!response.ok) {
+      throw new Error( `Could not fetch ${url}, status: ${response.status}` )
+   }
+
+   return await response.json()
+}
+
 
 export {postData}
 export {getResource}
+
