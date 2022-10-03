@@ -9,8 +9,8 @@ function forms(formsSelector, modalTimerId) {
 
    const message = {
       loading: spinner,
-      success: 'Спасибо! Скоро мы с вами свяжемся',
-      failure: 'Упс, что-то пошло не так...'
+      success: 'Thank you! We will contact you soon',
+      failure: 'Oops, something went wrong...'
    }
 
    forms.forEach( item => {
@@ -37,8 +37,8 @@ function forms(formsSelector, modalTimerId) {
          try {
 
             let data = await postData( 'http://localhost:3000/requests', json )
-            console.log( 'запостили: ', data )
-            console.log( 'смотри все данные по: ' + 'http://localhost:3000/requests' )
+            console.log( 'posted: ', data )
+            console.log( 'see all data: ' + 'http://localhost:3000/requests' )
             showThanksModal( message.success )
             statusMessage.remove()
             form.reset()
@@ -46,22 +46,22 @@ function forms(formsSelector, modalTimerId) {
 
          } catch (error) {
 
-            console.log( 'Ошибка: ' + error )
+            console.log( 'Error: ' + error )
 
-            alert( 'Ошибка: ' + error + '\n' +
-               'Наверно JSON Server отключен, \n' +
-               'тогда мы сделаем отправку данных на https://jsonplaceholder.typicode.com/posts \n' +
-               'смотри в консоле ответы'
+            alert( 'Error: ' + error + '\n' +
+               'Probably JSON Server is disabled, \n' +
+               'then we will send the data to https://jsonplaceholder.typicode.com/posts \n' +
+               'see console for answers'
             )
 
             try {
                let data2 = await postData( 'https://jsonplaceholder.typicode.com/posts', json )
-               console.log( 'запостили: ', data2 )
+               console.log( 'posted: ', data2 )
                showThanksModal( message.success )
                form.reset()
                statusMessage.remove()
             } catch (error2) {
-               console.log( 'Ошибка: ' + error2 )
+               console.log( 'Error: ' + error2 )
                showThanksModal( message.failure )
                form.reset()
                statusMessage.remove()

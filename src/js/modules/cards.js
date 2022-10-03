@@ -11,7 +11,7 @@ async function cards() {
          this.price = price
          this.classes = classes
          this.parent = document.querySelector( parentSelector )
-         this.transfer = 27
+         this.transfer = 1
          // тут курс устанавливаем
          this.changeToUAH()
       }
@@ -32,13 +32,13 @@ async function cards() {
 
          element.innerHTML =
             `
-                <img src=${this.src} alt=${this.alt}>
-                <h3 class="menu__item-subtitle">${this.title}</h3>
-                <div class="menu__item-descr">${this.descr}</div>
-                <div class="menu__item-divider"></div>
-                <div class="menu__item-price">
-                    <div class="menu__item-cost">Цена:</div>
-                    <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
+                <img src='${this.src}' alt='${this.alt}'>
+                <h3 class='menu__item-subtitle'>${this.title}</h3>
+                <div class='menu__item-descr'>${this.descr}</div>
+                <div class='menu__item-divider'></div>
+                <div class='menu__item-price'>
+                    <div class='menu__item-cost'>Price:</div>
+                    <div class='menu__item-total'><span>${this.price}</span> USD/day</div>
                 </div>
             `
          this.parent.append( element )
@@ -49,22 +49,22 @@ async function cards() {
       {
          img: 'img/vegy.jpg',
          altimg: 'vegy',
-         title: 'Меню \'Фитнес\'',
-         descr: 'Меню \'Фитнес\' - (это меню с кода с объекта JS !) это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
+         title: 'Menu \'Fitness\'',
+         descr: 'Menu \'Fitness\' - (this is a menu from the code from the JS object!) this is a new approach to cooking: more fresh vegetables and fruits. Product of active and healthy people. This is a brand new product with best price and high quality!',
          price: 9
       },
       {
          img: 'img/post.jpg',
          altimg: 'post',
-         title: 'Меню \'Постное\'',
-         descr: 'Меню \'Постное\' - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
+         title: 'Menu \'Lenten\'',
+         descr: 'Menu \'Lenten\' - it is a careful selection of ingredients: the complete absence of animal products, milk from almonds, oats, coconut or buckwheat, the right amount of protein from tofu and imported vegetarian steaks.',
          price: 14
       },
       {
          img: 'img/elite.jpg',
          altimg: 'elite',
-         title: 'Меню \'Премиум\'',
-         descr: 'В меню \'Премиум\' мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
+         title: 'Menu \'Premium\'',
+         descr: 'In menu \'Premium\' we use not only beautiful packaging design, but also high-quality execution of dishes. Red fish, seafood, fruits - restaurant menu without going to a restaurant!',
          price: 21
       }
    ]
@@ -80,8 +80,8 @@ async function cards() {
          } )
    } catch (error) {
 
-      console.log( 'Ошибка: ' + error.message )
-      console.log( 'Наверно JSON Server отключен, поэтому данные берем с кода с объекта JS ' )
+      console.log( 'Error: ' + error.message )
+      console.log( 'Probably JSON Server is disabled, so we take the data from the code from the JS object ' )
 
       data2.forEach( ({img, altimg, title, descr, price}) => {
          new MenuCard( img, altimg, title, descr, price, '.menu .container' ).render()
@@ -94,6 +94,6 @@ async function cards() {
 export default cards
 
 // тут при выравнивании через альт + контр + L ломается выше разметка !!!
-// только то что выделил то и выравниваем
+// только то что выделил, то и выравниваем
 
 

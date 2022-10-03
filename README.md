@@ -1,11 +1,9 @@
 
 ## Food delivery
 
-[//]: <> (This is a comment, it will not be included)
+#### Link where publishes this project: [https://maxim-saharov.com.ua/food-delivery](https://maxim-saharov.com.ua/food-delivery)
 
-#### Link to where publishes this project: [https://maxim-saharov.com.ua/food-delivery](https://maxim-saharov.com.ua/food-delivery)
-
-Link to where publish other projects: [https://maxim-saharov.com.ua](https://maxim-saharov.com.ua)
+Link where publish other projects: [https://maxim-saharov.com.ua](https://maxim-saharov.com.ua)
 
 ***
 

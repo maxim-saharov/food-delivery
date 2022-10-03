@@ -18,8 +18,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
    modal( '[data-modal]', '.modal', modalTimerId )
 
-   timer( '.timer', '2022-10-21' )
-   // тут типем когда Акция закончится
+   timer( '.timer', '2022-11-21' )
+   // тут пишем когда Акция закончится
    // если сегодня должна закончится то пишем завтрашнюю дату
 
    cards()

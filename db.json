@@ -3,28 +3,28 @@
     {
       "img": "img/vegy.jpg",
       "altimg": "vegy",
-      "title": "Меню 'Фитнес'",
-      "descr": "Меню 'Фитнес' - (это меню с файла db.json !) это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!",
+      "title": "Menu 'Fitness''",
+      "descr": "Menu 'Fitness' - (this is a menu from the db.json file!) is a new approach to cooking: more fresh vegetables and fruits. A product of active and healthy people. This is a completely new product with the best price and high quality!",
       "price": 9
     },
     {
       "img": "img/post.jpg",
       "altimg": "post",
-      "title": "Меню 'Постное'",
-      "descr": "Меню 'Постное' - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.",
+      "title": "Menu 'Lenten'",
+      "descr": "The 'Lenten' menu is a careful selection of ingredients: no animal products, milk from almonds, oats, coconut or buckwheat, the right amount of protein from tofu and imported vegetarian steaks.",
       "price": 14
     },
     {
       "img": "img/elite.jpg",
       "altimg": "elite",
-      "title": "Меню 'Премиум'",
-      "descr": "В меню 'Премиум' мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!",
+      "title": "Menu 'Premium'",
+      "descr": "In the 'Premium' menu, we use not only beautiful packaging design, but also high-quality execution of dishes. Red fish, seafood, fruits - a restaurant menu without going to a restaurant!",
       "price": 21
     }
   ],
   "requests": [
     {
-      "name": "Максим",
+      "name": "Maxim",
       "phone": "+38 (555) 555-55-55",
       "id": 1
     }
